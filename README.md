@@ -103,3 +103,16 @@ python -c "import tensorrt as trt; print('tensorrt:', trt.__version__)"
 ```
 python test_trt.py
 ```
+
+# 9) Setup diffusers, huggingface_hub etc.
+
+```
+# core
+python -m pip install -U diffusers transformers accelerate safetensors
+
+# Flux / image IO commonly needs these
+python -m pip install -U huggingface_hub pillow numpy
+
+python -m pip uninstall -y diffusers
+python -m pip install -U "git+https://github.com/huggingface/diffusers.git"
+```
